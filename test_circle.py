@@ -7,6 +7,15 @@ Write unit tests as described in README.md.
 3. Unit test that circle constructor raises exception of radius is negative.
 
 """
+import unittest
 from circle import Circle
 
-# TODO write 3 tests as described above
+class TestCircle(unittest.TestCase):
+
+    def set_up(self):
+        Circle()
+
+    # to test:
+    #
+    def test_(self):
+        self.set_up()
