@@ -25,9 +25,9 @@ class Circle:
         should form a Pythagorean triple (r1^2 + r2^2 = r3^2)
         >>> a = Circle(3)
         >>> b = Circle(4)
-        >>> a.add_area(b)
-        >>> a.get_radius()
-        5
+        >>> c = a.add_area(b)
+        >>> c.get_radius()
+        5.0
         """
         r1 = self.get_radius()
         r2 = circle.get_radius()
