@@ -9,6 +9,10 @@ class Circle:
         
         :param radius: radius of the circle, may be zero.
         :raises ValueError: if radius is negative.
+        >>> Circle(-1)
+        Traceback (most recent call last):
+        ...
+        ValueError: radius must be non-negative
         """
         if radius < 0:
             raise ValueError("radius must be non-negative")
@@ -22,7 +26,8 @@ class Circle:
         >>> a = Circle(3)
         >>> b = Circle(4)
         >>> a.add_area(b)
-        >>>
+        >>> a.get_radius()
+        5
         """
         r1 = self.get_radius()
         r2 = circle.get_radius()
