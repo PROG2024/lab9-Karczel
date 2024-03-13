@@ -24,7 +24,7 @@ class Counter():
         self.__count = 0
 
     def __new__(cls,*args,**kwargs):
-        if not cls._instance:
+        if cls._instance is None:
             cls._instance = super().__new__(cls,*args,**kwargs)
             logging.info(f"allocate a new Counter")
         else:
@@ -34,9 +34,6 @@ class Counter():
 
     def __str__(self):
         return f"{self.__count}"
-
-    #TODO write count property
-    #TODO write increment method
 
     @property
     def count(self):

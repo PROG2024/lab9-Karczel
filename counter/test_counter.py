@@ -23,4 +23,4 @@ class TestCounter(unittest.TestCase):
     def test_same_count(self):
         self.d = Counter()
         self.c = Counter()
-        self.assertNotEqual(0, self.c.get_count())
+        self.assertNotEqual(0, self.c.count)
