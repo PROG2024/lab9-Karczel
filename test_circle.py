@@ -26,6 +26,7 @@ class TestCircle(unittest.TestCase):
         self.c1 = self.c1.add_area(self.c2)
         self.assertEqual(5,self.c1.get_radius())
         self.assertGreater(self.c1.get_area(), c)
+        
 
     # Edge case
 
