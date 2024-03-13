@@ -26,7 +26,7 @@ class TestCircle(unittest.TestCase):
         self.c1 = self.c1.add_area(self.c2)
         self.assertEqual(5,self.c1.get_radius())
         self.assertGreater(self.c1.get_area(), c)
-        
+
 
     # Edge case
 
@@ -41,3 +41,8 @@ class TestCircle(unittest.TestCase):
         c = self.c1.get_area()
         self.c0 = self.c0.add_area(self.c1)
         self.assertEqual(c, self.c0.get_area())
+
+    def test_negative(self):
+        self.set_up()
+        with self.assertRaises(ValueError):
+            c = Circle(-1)
