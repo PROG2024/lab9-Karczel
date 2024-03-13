@@ -13,13 +13,11 @@ from counter import Counter
 
 class TestCounter(unittest.TestCase):
 
-    #Singleton id
     def test_singleton(self):
         self.a = Counter()
         self.b = Counter()
-        self.assertEqual(id(self.a),id(self.b)) # id is same
+        self.assertEqual(id(self.a),id(self.b))
 
-    #all reference, same count, not reset
     def test_same_count(self):
         self.d = Counter()
         self.c = Counter()

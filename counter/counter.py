@@ -13,25 +13,24 @@ import logging
 from typing import Iterable
 
 logging.basicConfig(level=logging.INFO,
-                   format="%(levelname)s %(funcName)8s: %(message)s"
-                   )
+                    format="%(levelname)s %(funcName)8s: %(message)s"
+                    )
+
 
 class Counter:
-
     _instance = None
 
     # def __init__(self):
     #     self.__count = 0
 
-    def __new__(cls,*args,**kwargs):
+    def __new__(cls, *args, **kwargs):
         if cls._instance is None:
-            cls._instance = super().__new__(cls,*args,**kwargs)
+            cls._instance = super().__new__(cls, *args, **kwargs)
             cls._instance.__count = 0
             logging.info(f"allocate a new Counter")
         else:
             cls._instance.increment()
         return cls._instance
-
 
     def __str__(self):
         return f"{self.__count}"
