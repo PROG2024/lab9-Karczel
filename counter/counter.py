@@ -11,6 +11,8 @@
 
 class Counter:
 
+    _instance =
+
     def __init__(self):
         self.__count = 0
 
