@@ -9,12 +9,27 @@
       You may not have a __new__ depending on how you implement the singleton.
 """
 
-class Counter:
+import logging
+from typing import Iterable
 
-    _instance =
+logging.basicConfig(level=logging.INFO,
+                   format="%(levelname)s %(funcName)8s: %(message)s"
+                   )
+
+class Counter():
+
+    _instance = None
 
     def __init__(self):
         self.__count = 0
+
+    def __new__(cls,*args,**kwargs):
+        if not cls._instance:
+            cls._instance = super().__new__(cls,*args,**kwargs)
+            logging.info(f"allocate a new Counter")
+        else:
+            cls._instance.increment()
+        return cls._instance
 
 
     def __str__(self):
@@ -22,3 +37,10 @@ class Counter:
 
     #TODO write count property
     #TODO write increment method
+
+    @property
+    def count(self):
+        return self.__count
+
+    def increment(self):
+        self.__count += 1
